@@ -1,15 +1,21 @@
 function getRandom() {
     let random = Math.random(0,1) * 2
     let rounded = Math.floor(random)
-    if (rounded === 0) {
-      return 'Fej!'
+    return rounded;
+  }
+
+  function getWinner() {
+    if (coin == humanGuess) {
+      return 'You won!' + ' coin: ' + coin + ' your guess: ' + humanGuess;
     } else {
-      return 'Írás!'
+      return 'You lost!' + ' coin: ' + coin + ' your guess: ' + humanGuess;
     }
   }
+
   let coin = getRandom()
-  let machineGuess = getRandom()
-  console.log('Pénzérme:', coin)
-  console.log('Számítógép tippje:', machineGuess)
-  let humanGuess = prompt('Adj meg 0-t vagy 1-et!')
-  console.log('Ember tippje:', humanGuess) 
+  // console.log('Pénzérme:', coin)
+  let humanGuess = prompt('Adj meg 0-t vagy 1-et!');
+  // console.log('Ember tippje:', humanGuess);
+
+  let result = getWinner();
+  console.log(result);
